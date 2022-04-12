@@ -4,8 +4,6 @@ class Quiz:
     all_quizzes = []
 
     def __init__(self, question, choices, answer):
-        # implement assert
-
         self.question = question
         self.choices = choices
         self.answer = answer
@@ -24,13 +22,19 @@ class Quiz:
             Quiz(
                 question=item.get('question'),
                 choices=item.get('choices'),
-                answer=item.get('answer'),
-                # change to answer=int(item.get('answer')) after sorting out bug
+                answer=int(item.get('answer')),
             )
     
     def __repr__(self):
         return f"Item('{self.question}', {self.choices}, {self.answer})"
 
+# To do: 
+# Print each instance to the quiz interface
+# Split choices into list using split method. 
+# Add for loop on QuizInterface class to loop over the list.
+# Add a row on csv ('result') whether a user has correctly answered a question (default on false)
+# Add method on interface to take inputs from console
+# Add method looping through 'result' sum(), checking how many is True/False
 
 class QuizInterface:
     def print_quiz(self, quiz):
