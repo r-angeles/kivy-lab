@@ -13,7 +13,7 @@ class Quiz:
 
     @classmethod
     def instantiate_from_csv(cls):
-        with open('practise/python/quiz/questions.csv', 'r') as f:
+        with open('questions.csv', 'r') as f:
             reader = csv.DictReader(f)
             items = list(reader)
 
